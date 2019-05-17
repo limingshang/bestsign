@@ -2,7 +2,7 @@
 namespace Bestsign;
 
 
-use Bestsign\BestSignSDK\HttpUtils;
+use Bestsign\Bestsign\HttpUtils;
 
 class SignModel
 {
