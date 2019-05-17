@@ -1,5 +1,5 @@
 <?php
-namespace bestsign\BestSignSDK;
+namespace Bestsign\BestSignSDK;
 
 class Utils
 {
