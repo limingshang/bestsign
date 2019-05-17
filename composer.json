@@ -1,6 +1,6 @@
 {
-    "name": "lims/bestsign",
-    "description": "lims/bestsign",
+    "name": "lims/Bestsign",
+    "description": "lims/Bestsign",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,6 +14,6 @@
         "php":">=5.4.0"
     },
     "autoload": {
-        "bestsign\\":"src/"
+        "Bestsign\\":"src/"
     }
 }

@@ -1,8 +1,8 @@
 <?php
-namespace bestsign;
+namespace Bestsign;
 
 
-use bestsign\Bestsign\HttpUtils;
+use Bestsign\Bestsign\HttpUtils;
 
 class SignModel
 {
