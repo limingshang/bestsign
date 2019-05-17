@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7df5af6e-ced5-4fbf-8194-51d6508c2861" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bestsign/HttpUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bestsign/HttpUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bestsign/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bestsign/Utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SignModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bestsign.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bestsign.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="17" />
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -74,13 +70,16 @@
       <list>
         <option value="$PROJECT_DIR$/src/BestSignSDK/HttpUtils.php" />
         <option value="$PROJECT_DIR$/src/BestSignSDK/Utils.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/bestsign.php" />
         <option value="$PROJECT_DIR$/src/SignModel.php" />
         <option value="$PROJECT_DIR$/src/Bestsign/HttpUtils.php" />
         <option value="$PROJECT_DIR$/src/Bestsign/Utils.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -146,12 +145,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558094935098</updated>
       <workItem from="1558094936575" duration="447000" />
-      <workItem from="1558096213320" duration="247000" />
+      <workItem from="1558096213320" duration="534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="694000" />
+    <option name="totallyTimeSpent" value="981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="703" extended-state="0" />
@@ -227,7 +226,7 @@
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="17" />
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
         </state>
       </provider>
     </entry>

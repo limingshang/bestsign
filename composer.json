@@ -1,6 +1,6 @@
 {
-    "name": "lims/sign-bestsign",
-    "description": "lims/sign-bestsign",
+    "name": "lims/bestsign",
+    "description": "lims/bestsign",
     "type": "library",
     "license": "MIT",
     "authors": [
