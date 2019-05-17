@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7df5af6e-ced5-4fbf-8194-51d6508c2861" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bestsign/HttpUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bestsign/HttpUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bestsign/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bestsign/Utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SignModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bestsign.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bestsign.php" afterDir="false" />
-    </list>
+    <list default="true" id="7df5af6e-ced5-4fbf-8194-51d6508c2861" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,12 +143,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558094935098</updated>
       <workItem from="1558094936575" duration="447000" />
-      <workItem from="1558096213320" duration="679000" />
+      <workItem from="1558096213320" duration="820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1126000" />
+    <option name="totallyTimeSpent" value="1267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="703" extended-state="0" />
