@@ -1,5 +1,5 @@
 <?php
-namespace Bestsign;
+namespace bestsign;
 
 
 class bestsign

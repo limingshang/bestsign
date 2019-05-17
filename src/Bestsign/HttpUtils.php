@@ -1,5 +1,5 @@
 <?php
-namespace Bestsign\Bestsign;
+namespace bestsign\Bestsign;
 
 class HttpUtils
 {
