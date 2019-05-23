@@ -1,122 +1,52 @@
 <?php
-namespace Bestsign;
+// +----------------------------------------------------------------------
+// | LMS
+// +----------------------------------------------------------------------
+// | Copyright (c) https://b.alphae.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: limingshang <limingshang@alphae.cn>
+// +----------------------------------------------------------------------
+// | 2019-05-19 13:37
+// +----------------------------------------------------------------------
+
+namespace Bestsign\Model;
 
 
 use Bestsign\Bestsign\HttpUtils;
 
-class SignModel
+abstract class BaseSignModel
 {
-    private $_developerId = '';
-    private $_pem = '';
-    private $_host = '';
-    private $_http_utils = null;
+    /**
+     * @var string
+     * ras加密私钥
+     */
+    protected $_pem         = '';
+
+    /**
+     * @var string
+     * 请求地址
+     */
+    protected $_host        = '';
+
+    /**
+     * @var HttpUtils|null
+     * 请求curl实体类
+     */
+    protected $_http_utils  = null;
+
+    /**
+     * @var string
+     * 开发者编号
+     */
+    protected $_developerId = '';
 
     public function __construct($_developerId, $pem, $host, $pem_type)
     {
-        $this->_pem = $this->_formatPem($pem, $pem_type);
+        $this->_pem         = $this->_formatPem($pem, $pem_type);
+        $this->_host        = $host;
+        $this->_http_utils  = new HttpUtils();
         $this->_developerId = $_developerId;
-        $this->_host = $host;
-        $this->_http_utils = new HttpUtils();
     }
-    
-    //********************************************************************************
-    // 接口
-    //********************************************************************************
-    public function regUser($account, $mail, $mobile, $name, $userType, $credential=null, $applyCert='0')
-    {
-
-        $path = "/user/reg/";
-
-        //post data
-        $post_data['email'] = $mail;
-        $post_data['mobile'] = $mobile;
-        $post_data['name'] = $name;
-        $post_data['userType'] = $userType;
-        $post_data['account'] = $account;
-        $post_data['credential'] = $credential;
-        $post_data['applyCert'] = $applyCert;
-
-        $post_data = json_encode($post_data);
-        var_dump($post_data);
-
-        //rtick
-        $rtick = time().rand(1000, 9999);
-
-        //sign data
-        $sign_data = $this->_genSignData($path, null, $rtick, md5($post_data));
-
-        //sign
-        $sign = $this->getRsaSign($sign_data);
-
-        $params['developerId'] = $this -> _developerId;
-        $params['rtick'] = $rtick;
-        $params['signType'] = 'rsa';
-        $params['sign'] =$sign;
-
-        //url
-        $url = $this->_getRequestUrl($path, null, $sign, $rtick);
-        var_dump("Request url: " . $url);
-
-        //header data
-        $header_data = array();
-
-        //content
-        $response = $this->execute('POST', $url, $post_data, $header_data, true);
-
-        return $response;
-    }
-
-    public function downloadSignatureImage($account, $image_name)
-    {
-        $path = "/signatureImage/user/download/";
-
-        $url_params['account'] = $account;
-        $url_params['imageName'] = $image_name;
-
-        //rtick
-        $rtick = time() . rand(1000, 9999);
-
-        //sign
-        $sign_data = $this->_genSignData($path, $url_params, $rtick, null);
-        $sign = $this->getRsaSign($sign_data);
-
-        $url = $this->_getRequestUrl($path, $url_params, $sign, $rtick);
-        var_dump("url: ".$url);
-
-        //header data
-        $header_data = array();
-
-        //content
-        $response = $this->execute('GET', $url, null, $header_data, true);
-
-        return $response;
-    }
-
-    public function downloadContract($contractId)
-    {
-        $path = "/storage/contract/download/";
-
-        $url_params['contractId'] = $contractId;
-
-        //rtick
-        $rtick = time() . rand(1000, 9999);
-
-        //sign
-        $sign_data = $this->_genSignData($path, $url_params, $rtick, null);
-        $sign = $this->getRsaSign($sign_data);
-
-        $url = $this->_getRequestUrl($path, $url_params, $sign, $rtick);
-        var_dump("url: ".$url);
-
-        //header data
-        $header_data = array();
-
-        //content
-        $response = $this->execute('GET', $url, null, $header_data, true);
-
-        return $response;
-    }
-
     /**
      * @param $path：接口名
      * @param $url_params: get请求需要放进参数中的参数
@@ -124,13 +54,14 @@ class SignModel
      * @param $post_md5：post请求时，body的md5值
      * @return string
      */
-    private function _genSignData($path, $url_params, $rtick, $post_md5)
+    protected function _genSignData($path, $url_params, $rtick, $post_md5)
     {
         $request_path = parse_url($this->_host . $path)['path'];
 
-        $url_params['developerId'] = $this -> _developerId;
-        $url_params['rtick'] = $rtick;
-        $url_params['signType'] = 'rsa';
+        $url_params['rtick']       = $rtick;
+        $url_params['signType']    = 'rsa';
+        $url_params['developerId'] = $this->_developerId;
+
 
         ksort($url_params);
 
@@ -148,13 +79,13 @@ class SignModel
         return $sign_data;
     }
 
-    private function _getRequestUrl($path, $url_params, $sign, $rtick)
+    protected function _getRequestUrl($path, $url_params, $sign, $rtick)
     {
         $url = $this->_host .$path . '?';
 
         //url
         $url_params['sign'] = $sign;
-        $url_params['developerId'] = $this -> _developerId;
+        $url_params['developerId'] = $this->_developerId;
         $url_params['rtick'] = $rtick;
         $url_params['signType'] = 'rsa';
 
@@ -168,7 +99,7 @@ class SignModel
         return $url;
     }
 
-    private function _formatPem($rsa_pem, $pem_type = '')
+    protected function _formatPem($rsa_pem, $pem_type = '')
     {
         //如果是文件, 返回内容
         if (is_file($rsa_pem))
@@ -269,5 +200,62 @@ class SignModel
             $ret = $this->_http_utils->get($url, $headers, $auto_redirect, $cookie_file);
         }
         return $ret;
+    }
+
+    /**
+     * 处理post合同参数处理
+     * @param $requestUrl
+     * @param $requestData
+     * @param $type
+     * @return array
+     * @throws \Exception
+     */
+    protected function controContractData($requestUrl, $requestData, $type)
+    {
+        $rtick       = time() . rand(1000, 9999);  //rtick
+        $header_data = array();                         // header data
+        $response    = array();
+        switch ($type) {
+            case 'get':
+                $sign_data   = $this->_genSignData(        //
+                    $requestUrl,
+                    $requestData,
+                    $rtick,
+                    null
+                );
+                $sign                  = $this->getRsaSign($sign_data);
+                $url = $this->_getRequestUrl($requestUrl, $requestData, $sign, $rtick);
+                // 执行请求
+                $response = $this->execute(
+                    'GET',
+                    $url,
+                    null,
+                    $header_data,
+                    true
+                );  //content
+                break;
+            case 'post':
+                //sign data
+                $sign_data = $this->_genSignData(
+                    $requestUrl,
+                    null,
+                    $rtick,
+                    md5($requestData)
+                );
+                $sign                  = $this->getRsaSign($sign_data);
+                $params['sign']        = $sign;
+                $params['rtick']       = $rtick;
+                $params['signType']    = 'rsa';
+                $params['developerId'] = $this->_developerId;
+                $url = $this->_getRequestUrl($requestUrl, null, $sign, $rtick);    // 处理生成请求url
+                $response = $this->execute(
+                    'POST', $url,
+                    $requestData,
+                    $header_data,
+                    true
+                );
+                break;
+        }
+        return $response;
     }
 }
