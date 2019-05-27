@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7df5af6e-ced5-4fbf-8194-51d6508c2861" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ContractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ContractModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ContractUserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ContractUserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SignatureImageModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SignatureImageModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransFactory.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/ContractUserModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="49" column="52" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="52" />
+            <state relative-caret-position="155">
+              <caret line="17" column="69" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="69" />
               <folding>
                 <element signature="e#6#80#0#PHP" expanded="true" />
               </folding>
@@ -27,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bestsign.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -39,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TransFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="388">
+              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
               <folding>
                 <element signature="e#6#80#0#PHP" expanded="true" />
                 <element signature="e#544#577#0#PHP" expanded="true" />
@@ -52,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/SignatureImageModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
-              <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+            <state relative-caret-position="360">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="e#6#80#0#PHP" expanded="true" />
               </folding>
@@ -64,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/ContractModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="205" column="5" lean-forward="true" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
+            <state relative-caret-position="-2505">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -82,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/BaseSignModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="2702">
               <caret line="212" column="23" selection-start-line="212" selection-start-column="23" selection-end-line="212" selection-end-column="23" />
             </state>
           </provider>
@@ -121,11 +125,11 @@
       <find>expireTime</find>
       <find>$url</find>
       <find>$title</find>
-      <find>_genSignData</find>
       <find>download</find>
+      <find>$bestSign_demo</find>
+      <find>_genSignData</find>
       <find>$response</find>
       <find>$post_data</find>
-      <find>$bestSign_demo</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/Bestsign/SignatureImage</dir>
@@ -149,13 +153,13 @@
         <option value="$PROJECT_DIR$/src/Model/SignModel.php" />
         <option value="$PROJECT_DIR$/src/Model/DownLoadContractModel.php" />
         <option value="$PROJECT_DIR$/src/Model/UserModel.php" />
-        <option value="$PROJECT_DIR$/src/Model/ContractUserModel.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Model/BaseSignModel.php" />
-        <option value="$PROJECT_DIR$/src/Model/SignatureImageModel.php" />
         <option value="$PROJECT_DIR$/src/Config/Config.php" />
-        <option value="$PROJECT_DIR$/src/Model/ContractModel.php" />
         <option value="$PROJECT_DIR$/src/bestsign.php" />
+        <option value="$PROJECT_DIR$/src/Model/ContractModel.php" />
+        <option value="$PROJECT_DIR$/src/Model/ContractUserModel.php" />
+        <option value="$PROJECT_DIR$/src/Model/SignatureImageModel.php" />
         <option value="$PROJECT_DIR$/src/TransFactory.php" />
       </list>
     </option>
@@ -233,12 +237,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558094935098</updated>
       <workItem from="1558094936575" duration="447000" />
-      <workItem from="1558096213320" duration="33133000" />
+      <workItem from="1558096213320" duration="33814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33580000" />
+    <option name="totallyTimeSpent" value="34261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="703" extended-state="0" />
@@ -311,47 +315,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ContractUserModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="49" column="52" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="52" />
-          <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/BaseSignModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="212" column="23" selection-start-line="212" selection-start-column="23" selection-end-line="212" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Config/Config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="32" column="45" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ContractModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="205" column="5" lean-forward="true" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/SignatureImageModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
-          <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -362,10 +332,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bestsign.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="3" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/BaseSignModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2702">
+          <caret line="212" column="23" selection-start-line="212" selection-start-column="23" selection-end-line="212" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ContractModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2505">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/SignatureImageModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TransFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="388">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
           <folding>
             <element signature="e#6#80#0#PHP" expanded="true" />
             <element signature="e#544#577#0#PHP" expanded="true" />
@@ -373,10 +374,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bestsign.php">
+    <entry file="file://$PROJECT_DIR$/src/Model/ContractUserModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="3" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="155">
+          <caret line="17" column="69" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="69" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
