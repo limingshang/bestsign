@@ -19,7 +19,7 @@ use Bestsign\Model\ContractUserModel;
 class TransFactory
 {
 
-    public static function factory($transport, $_developerId, $pem, $host, $pem_type)
+    public static function factory($transport, $_developerId, $pem, $host, $pem_type = '')
     {
         switch ($transport) {
             case 'ContractUser':   // 注册用户

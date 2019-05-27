@@ -17,7 +17,7 @@ use Bestsign\Config\Config;
 class ContractModel extends BaseSignModel
 {
 
-    public function __construct($_developerId, $pem, $host, $pem_type)
+    public function __construct($_developerId, $pem, $host, $pem_type = '')
     {
         $this->_pem         = $this->_formatPem($pem, $pem_type);
         $this->_host        = $host;
