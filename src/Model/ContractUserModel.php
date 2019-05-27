@@ -11,16 +11,14 @@
 
 namespace Bestsign\Model;
 
+use Bestsign\Bestsign\HttpUtils;
 use Bestsign\Config\Config;
 
 class ContractUserModel extends BaseSignModel
 {
     public function __construct($_developerId, $pem, $host, $pem_type = '')
     {
-        $this->_pem         = $this->_formatPem($pem, $pem_type);
-        $this->_host        = $host;
-        $this->_http_utils  = new HttpUtils();
-        $this->_developerId = $_developerId;
+        parent::__construct($_developerId, $pem, $host, $pem_type);
     }
     /**
      * 用户注册
