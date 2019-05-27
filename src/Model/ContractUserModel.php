@@ -32,7 +32,7 @@ class ContractUserModel extends BaseSignModel
      * @return mixed
      * @throws \Exception
      */
-    public function regUser($account, $mail, $mobile, $name, $userType, $credential = null, $applyCert = '1')
+    public function regUser($account, $mail, $mobile, $name, $userType, $credential = null, $applyCert = '0')
     {
         // 注册地址
         $path = Config::BESTSIGN_REGISTER_URL;
