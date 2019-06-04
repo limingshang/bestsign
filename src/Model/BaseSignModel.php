@@ -167,7 +167,6 @@ abstract class BaseSignModel
     public function execute($method, $url, $request_body = null, array $header_data = array(), $auto_redirect = true, $cookie_file = null)
     {
         $response = $this->request($method, $url, $request_body, $header_data, $auto_redirect, $cookie_file);
-
         $http_code = $response['http_code'];
         if ($http_code != 200)
         {
@@ -242,20 +241,23 @@ abstract class BaseSignModel
                     $rtick,
                     md5($requestData)
                 );
-                $sign                  = $this->getRsaSign($sign_data);
-                $params['sign']        = $sign;
-                $params['rtick']       = $rtick;
-                $params['signType']    = 'rsa';
-                $params['developerId'] = $this->_developerId;
+                $sign = $this->getRsaSign($sign_data);
                 $url = $this->_getRequestUrl($requestUrl, null, $sign, $rtick);    // 处理生成请求url
                 $response = $this->execute(
-                    'POST', $url,
+                    'POST',
+                    $url,
                     $requestData,
                     $header_data,
                     true
                 );
                 break;
         }
-        return $response;
+
+        $response = json_decode($response, true);
+        if ($response['errno'] === 0) {
+            return $response;
+        } else {
+            throw new \Exception(json_encode($response, JSON_UNESCAPED_UNICODE));
+        }
     }
 }

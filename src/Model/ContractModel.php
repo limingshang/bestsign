@@ -62,18 +62,19 @@ class ContractModel extends BaseSignModel
      */
     public function uploadCreateContract($title, $fdata, $description, $fpages, $fname, $account, $fmd5, $ftype = 'pdf')
     {
+        $expireTime = time() + Config::EXPIRE_TIME;
         $path = Config::BESTSIGN_UPLOAD_CREATE_CONTRACT;
         $post_data['title']        = $title;
         $post_data['fdata']        = $fdata;
         $post_data['description']  = $description;
-        $post_data['fpages']       = $fpages;
+        $post_data['fpages']       = (string)$fpages;
         $post_data['fname']        = $fname;
         $post_data['ftype']        = $ftype;
         $post_data['account']      = $account;
         $post_data['fmd5']         = $fmd5;
-        $post_data['expireTime']   = Config::EXPIRE_TIME;
+        $post_data['expireTime']   = (string)$expireTime;
         $post_data = json_encode($post_data, JSON_UNESCAPED_UNICODE);
-        return $this->controContractData($path, $post_data);
+        return $this->controContractData($path, $post_data, 'post');
     }
 
     /*
