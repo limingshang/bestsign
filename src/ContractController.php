@@ -20,46 +20,12 @@ use PhpOffice\PhpWord\TemplateProcessor;
 class ContractController extends Controller
 {
 
-    private $pem = "MIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQChSL4Y5LkxhiQRmLRiq4c+lfjrT7qzUPrRwRMU5SzuVUvy1Ls2sXSZ+eueKFZqU5TT3iRPboZ57YSiik1k27xnA+fjnXtU5dCJ+NSkt1qZHwbhFZ2B59B6K0P5fUhWn6SOtbs9S2JTrcULqfffb/tcFBP27nMNZKuZQEvdLFbuG56n/BWtX/AVHik1/c3be/6W7nfA/m1HKCJ0hY9irKOjx1MHo3GCkO66Sk0MyDDJ6IQ29Na8bYQwF/8Pemia6UPLOJJm9/5e5KUu4QKvNiAJxEO9GhMlnf6bg7YIFOuWP9A0p2s67gQrCxdFwcXdnznc9KdrmkYkbW/9Z6To2WmJAgMBAAECggEAQ3/SL1DqQNPHHKYwOGtZOtRBTRodJRbrIgYQGlqfp0+DbamigI1cI2T5O0PehrlcPB9oSuYS2cySCgSfx2o/O03jKtup1iooUNYXCKjD/fmCQ4lsVgXSto6M8EmCkN5XXHKqXkjCagr7wJnt51FSfYLZqCq7dAuB1a2XEoWQDC5PRqAe32NDNXJLUgFY6AB4HkAKp24i77xhP4A1BsxAdbSWzTOgYCdHqd35rzRU8QH1Hjf/xMGqb3Xsrk2mHcxfJJ28O65RpV80K5fSvaYhLdI1O29SZzBlCb/NtQzsooYzIbW/Yj2/X0XJ595G+DzXid4inJVZCEFfyHAYzf+Y0QKBgQDpnhtHyC2YDqHJJpZ1iPTk6D26N9fJ2lTVMIVlQ0xTIoMWO7Hq6CphTp9x9ivk/zazEO0TlOq7Gcn5C+NyLs7BWNXY65F66j6E/uBPmUhVxH0UiBts0h3YbZqmN1l8kpwqhZHH1SW+T+mkrg8q5z8QZcODQup4uCjUEuVWVqc9zwKBgQCwvIcKAf+oP+3TkbGJvXok7pFL7td3zSdeek7lssv0pQ9nrUT9ehwcI1+OnfcXXLf1D/SXZEcFaJX3CnmKFXcW4MY/1ZNp/yaKag6tlXQ9vtf5lHPvs5wcOnvwcl1C4/QWNbP/1kJqP0mIkSAK3dlQMW+r4WEDK0jAtegH4MfRJwKBgFs0oM3rdvFwdPVFHWSRrZpYmRDEkHh7xrbclJeuKHQkey0I7TMapMEMou8o/oYOpVpPd183ulSFgva6D3gakhmmBwcDIO7t2K6vmv84hqcFaRfE84AOoBxI3iGaZlNeIZ3wO7PaoTulkz/5vG4xjctnD2eFjmjG7Rmurt6AQha9An9XrS9Qx60MyqoxSxXIPzdZGwD5qoM564ycUhDR4uFLfJcn181h8jH/w4ykM7lg3Z5k9IVilVymUjwTUh75YayyrM+s20dGTk3QXMzrUDlaaFK8fekGARRw7JKPtiyOAogUfI/PW3uXOc5A8b3zphsorV245xY5fD+bWqLBRcHbAoGAV8TcyFLVGyJxaOKIYp8T5hwWpruZ/3Y2MC76zeo4lBhYuzKybFYeMA/0st89lE94e0tTNIDKTxU99fJ50dsA68dQ4EG9Y9vjhE+tdCXzF3OMmV+Lk9sVOGQZZFp5XOsQY81n+p7W60UzYcs6UUrfNRncyRJ7cc8IqFaB08eJ77I=";
-    private $developerId = "1558061940011400608";
-    private $server_host = "https://openapi.bestsign.info/openapi/v2"; //这个地方不要末尾的 /
+    private $pem            = "MIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQChSL4Y5LkxhiQRmLRiq4c+lfjrT7qzUPrRwRMU5SzuVUvy1Ls2sXSZ+eueKFZqU5TT3iRPboZ57YSiik1k27xnA+fjnXtU5dCJ+NSkt1qZHwbhFZ2B59B6K0P5fUhWn6SOtbs9S2JTrcULqfffb/tcFBP27nMNZKuZQEvdLFbuG56n/BWtX/AVHik1/c3be/6W7nfA/m1HKCJ0hY9irKOjx1MHo3GCkO66Sk0MyDDJ6IQ29Na8bYQwF/8Pemia6UPLOJJm9/5e5KUu4QKvNiAJxEO9GhMlnf6bg7YIFOuWP9A0p2s67gQrCxdFwcXdnznc9KdrmkYkbW/9Z6To2WmJAgMBAAECggEAQ3/SL1DqQNPHHKYwOGtZOtRBTRodJRbrIgYQGlqfp0+DbamigI1cI2T5O0PehrlcPB9oSuYS2cySCgSfx2o/O03jKtup1iooUNYXCKjD/fmCQ4lsVgXSto6M8EmCkN5XXHKqXkjCagr7wJnt51FSfYLZqCq7dAuB1a2XEoWQDC5PRqAe32NDNXJLUgFY6AB4HkAKp24i77xhP4A1BsxAdbSWzTOgYCdHqd35rzRU8QH1Hjf/xMGqb3Xsrk2mHcxfJJ28O65RpV80K5fSvaYhLdI1O29SZzBlCb/NtQzsooYzIbW/Yj2/X0XJ595G+DzXid4inJVZCEFfyHAYzf+Y0QKBgQDpnhtHyC2YDqHJJpZ1iPTk6D26N9fJ2lTVMIVlQ0xTIoMWO7Hq6CphTp9x9ivk/zazEO0TlOq7Gcn5C+NyLs7BWNXY65F66j6E/uBPmUhVxH0UiBts0h3YbZqmN1l8kpwqhZHH1SW+T+mkrg8q5z8QZcODQup4uCjUEuVWVqc9zwKBgQCwvIcKAf+oP+3TkbGJvXok7pFL7td3zSdeek7lssv0pQ9nrUT9ehwcI1+OnfcXXLf1D/SXZEcFaJX3CnmKFXcW4MY/1ZNp/yaKag6tlXQ9vtf5lHPvs5wcOnvwcl1C4/QWNbP/1kJqP0mIkSAK3dlQMW+r4WEDK0jAtegH4MfRJwKBgFs0oM3rdvFwdPVFHWSRrZpYmRDEkHh7xrbclJeuKHQkey0I7TMapMEMou8o/oYOpVpPd183ulSFgva6D3gakhmmBwcDIO7t2K6vmv84hqcFaRfE84AOoBxI3iGaZlNeIZ3wO7PaoTulkz/5vG4xjctnD2eFjmjG7Rmurt6AQha9An9XrS9Qx60MyqoxSxXIPzdZGwD5qoM564ycUhDR4uFLfJcn181h8jH/w4ykM7lg3Z5k9IVilVymUjwTUh75YayyrM+s20dGTk3QXMzrUDlaaFK8fekGARRw7JKPtiyOAogUfI/PW3uXOc5A8b3zphsorV245xY5fD+bWqLBRcHbAoGAV8TcyFLVGyJxaOKIYp8T5hwWpruZ/3Y2MC76zeo4lBhYuzKybFYeMA/0st89lE94e0tTNIDKTxU99fJ50dsA68dQ4EG9Y9vjhE+tdCXzF3OMmV+Lk9sVOGQZZFp5XOsQY81n+p7W60UzYcs6UUrfNRncyRJ7cc8IqFaB08eJ77I=";
+    private $developerId    = "1558061940011400608";
+    private $server_host    = "https://openapi.bestsign.info/openapi/v2"; //这个地方不要末尾的 /
     public  $model;
-    const ENCRYPT_STRING             = '!wdecssPfA';
+    const ENCRYPT_STRING    = '!wdecssPfA';
 
-    public function controContract()
-    {
-        $contract     = $this->_param['contract'];
-        // 处理生成合同参数
-        $contractPath = $contract['contractPath'];  // 合同文件路径
-        $title        = $contract['contractName'];  // 合同名称
-        $replaceData  = $contract['replaceData'];   // 需要替换的数据
-        $description  = $contract['description'];   // 合同内容描述
-        $fpages       = $contract['fpages'];        // 文件总页数
-        $fname        = $contract['fname'];         // 文件名称
-        $account      = $contract['account'];       // 用户账号
-
-        // 第一步上传创建合同
-        $contractId = $this->uploadCreateContract($contractPath, $title, $replaceData, $description, $fpages, $fname, $account);
-        // 处理签署合同参数
-        $signContract        = $this->_param['signContract'];
-        $signContracts       = array_column($signContract, 'signerAccount');
-        // 检测是否有重复签署的人员
-        if (count($signContracts) != count(array_unique($signContracts))) {
-            throw new \Exception('签署失败，合同内有重复签署操作人员');
-        }
-        // 循环签署合同
-        foreach($signContract as $key => $value) {
-            $signerAccount      = $value['signerAccount'];
-            $signaturePositions = $value['signaturePositions'];
-            // 第二步签署合同
-            $status = $this->signContract($contractId, $signerAccount, $signaturePositions);
-        }
-        // 锁定结束合同
-        $this->lockEndContract($contractId);
-        // 下载合同
-        return $this->downloadContract($contractId);
-
-    }
     /**
      * 注册普通用户
      * @param $account  必填
@@ -163,7 +129,46 @@ class ContractController extends Controller
             }
         }
     }
+    /**
+     * 签署合同具体执行方法
+     * @return string
+     * @throws \Exception
+     */
+    public function controContract()
+    {
+        $contract     = $this->_param['contract'];
+        // 处理生成合同参数
+        $contractPath = $contract['contractPath'];  // 合同文件路径
+        $title        = $contract['contractName'];  // 合同名称
+        $replaceData  = $contract['replaceData'];   // 需要替换的数据
+        $description  = $contract['description'];   // 合同内容描述
+        $fpages       = $contract['fpages'];        // 文件总页数
+        $fname        = $contract['fname'];         // 文件名称
+        $account      = $contract['account'];       // 用户账号
 
+        // 处理签署合同参数
+        $signContract        = $this->_param['signContract'];
+        try{
+            // 第一步上传创建合同
+            $contractId = $this->uploadCreateContract($contractPath, $title, $replaceData, $description, $fpages, $fname, $account);
+
+            // 循环签署合同
+            foreach($signContract as $key => $value) {
+                $signerAccount      = $value['signerAccount'];
+                $signaturePositions = $value['signaturePositions'];
+                // 第二步签署合同
+                $status = $this->signContract($contractId, $signerAccount, $signaturePositions);
+            }
+            // 锁定结束合同
+            $this->lockEndContract($contractId);
+            // 下载合同
+            $path = $this->downloadContract($contractId);
+            return $path;
+        } catch (\Exception $e) {
+            // 合同异常
+            return $e->getMessage();
+        }
+    }
     /**
      * 生成签章
      */
